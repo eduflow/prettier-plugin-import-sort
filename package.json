@@ -17,6 +17,9 @@
     "url": "https://github.com/ggascoigne/prettier-plugin-import-sort/issues"
   },
   "license": "MIT",
+  "scripts": {
+    "test": "ava"
+  },
   "dependencies": {
     "import-sort": "^6.0.0",
     "import-sort-config": "^6.0.0",
@@ -24,12 +27,18 @@
     "import-sort-parser-typescript": "^6.0.0"
   },
   "devDependencies": {
+    "ava": "^3.15.0",
     "import-sort-style-module": "^6.0.0",
     "prettier": "1.18.2",
     "prettier-plugin-import-sort": "./"
   },
   "peerDependencies": {
     "prettier": ">= 1.16"
+  },
+  "ava": {
+    "files": [
+      "!**/fixtures/**"
+    ]
   },
   "prettier": {
     "semi": false,
