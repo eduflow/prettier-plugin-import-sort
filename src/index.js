@@ -91,10 +91,7 @@ function organizeImports(unsortedCode, extension, dirname, options) {
   const directory = dirname || path.resolve(__dirname, '..', '..')
 
   // this throw exceptions up to prettier
-  const config = getAndCheckConfig(
-    extension,
-    directory
-  )
+  const config = getAndCheckConfig(extension, directory)
   const {
     parser: parserDefault,
     style: styleDefault,
@@ -103,18 +100,6 @@ function organizeImports(unsortedCode, extension, dirname, options) {
   const parser = resolveParser(options.parser, directory) || parserDefault
   const style = resolveStyle(options.style, directory) || styleDefault
 
-  console.log({
-    styleDefault,
-    style: resolveStyle(options.style, directory),
-    // style2: resolveStyle(options.style),
-    parserDefault,
-    parser: resolveParser(options.parser, directory)
-    // parser2: resolveParser(options.parser)
-  })
-
-  console.log(require.resolve(`import-sort-style-${options.style}`))
-
-  // parserDefault, config,
   const sortResult = sortImports(
     unsortedCode,
     parser,
