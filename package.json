@@ -33,7 +33,8 @@
   },
   "prettier": {
     "semi": false,
-    "singleQuote": true
+    "singleQuote": true,
+    "trailingComma": "none"
   },
   "importSort": {
     ".js, .jsx, .ts, .tsx": {
