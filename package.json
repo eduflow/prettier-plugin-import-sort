@@ -1,6 +1,6 @@
 {
-  "name": "prettier-plugin-import-sort",
-  "version": "0.0.5",
+  "name": "@peergrade/prettier-plugin-import-sort",
+  "version": "0.0.6-next.2",
   "description": "Prettier plugin to pass javascript and typescript through import-sort",
   "main": "src/index.js",
   "keywords": [
@@ -17,6 +17,9 @@
     "url": "https://github.com/ggascoigne/prettier-plugin-import-sort/issues"
   },
   "license": "MIT",
+  "scripts": {
+    "test": "ava"
+  },
   "dependencies": {
     "import-sort": "^6.0.0",
     "import-sort-config": "^6.0.0",
@@ -24,16 +27,27 @@
     "import-sort-parser-typescript": "^6.0.0"
   },
   "devDependencies": {
+    "ava": "^3.15.0",
+    "import-sort-style-eslint": "^6.0.0",
     "import-sort-style-module": "^6.0.0",
-    "prettier": "1.18.2",
-    "prettier-plugin-import-sort": "./"
+    "import-sort-style-renke": "^6.0.0",
+    "prettier": "^2.0.0",
+    "prettier-plugin-import-sort": "./",
+    "resolve-cwd": "^3.0.0",
+    "uri-js": "^4.4.1"
   },
   "peerDependencies": {
-    "prettier": ">= 1.16"
+    "prettier": ">= 2"
+  },
+  "ava": {
+    "files": [
+      "!**/fixtures/**"
+    ]
   },
   "prettier": {
     "semi": false,
-    "singleQuote": true
+    "singleQuote": true,
+    "trailingComma": "none"
   },
   "importSort": {
     ".js, .jsx, .ts, .tsx": {
