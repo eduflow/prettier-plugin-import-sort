@@ -1,6 +1,6 @@
 {
   "name": "@peergrade/prettier-plugin-import-sort",
-  "version": "0.0.6-next.1",
+  "version": "0.0.6-next.2",
   "description": "Prettier plugin to pass javascript and typescript through import-sort",
   "main": "src/index.js",
   "keywords": [
