@@ -12,7 +12,10 @@ const { parsers: javascriptParsers } = _interopDefault(
 )
 const sortImports = _interopDefault(require('import-sort'))
 const { getConfig } = _interopDefault(require('import-sort-config'))
+const { DEFAULT_CONFIGS } = _interopDefault(require('import-sort-config'))
 const path = _interopDefault(require('path'))
+
+const IMPORT_DEFAULT_DEFAULTS_JS = DEFAULT_CONFIGS[".js, .jsx, .es6, .es, .mjs, .ts, .tsx"]
 
 function throwIf(condition, message) {
   if (condition) {
@@ -89,6 +92,22 @@ const parsers = {
   }
 }
 
+const options = {
+    parser: {
+      type: "string",
+      category: "import-sort",
+      default: IMPORT_DEFAULT_DEFAULTS_JS.parser,
+      description: "import-sort: parser option (see: https://github.com/renke/import-sort#using-a-different-style-or-parser)"
+    },
+    style: {
+      type: "string",
+      category: "import-sort",
+      default: IMPORT_DEFAULT_DEFAULTS_JS.style,
+      description: "import-sort: style option (see: https://github.com/renke/import-sort#using-a-different-style-or-parser)"
+    }
+}
+
 module.exports = {
-  parsers
+  parsers,
+  options
 }
